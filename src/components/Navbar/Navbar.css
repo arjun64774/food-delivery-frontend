@@ -1,0 +1,226 @@
+.navbar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 150px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    font-size: 22px;
+    color: #49557e;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu a {
+    position: relative;
+    padding: 2px 0;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #49557e;
+    transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    color: #49557e;
+}
+
+.navbar-menu a:hover::after,
+.navbar-menu a.active::after {
+    width: 100%;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar-right img {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar-button {
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 6px 20px;
+    border-radius: 50px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.navbar-button:hover {
+    background-color: tomato;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon .dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: tomato;
+    border-radius: 50%;
+    top: -4px;
+    right: -6px;
+}
+
+.navbar-profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.profile-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-user-name {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+}
+
+.nav-profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: 1px solid tomato;
+    background-color: #fff2ef;
+    list-style: none;
+    z-index: 100;
+    min-width: 120px;
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+}
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-profile-dropdown li img {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-profile-dropdown li:hover {
+    color: tomato;
+}
+
+/* responsive */
+@media (max-width: 1050px) {
+    .logo {
+        width: 140px;
+    }
+
+    .navbar-menu {
+        gap: 20px;
+        font-size: 18px;
+    }
+
+    .navbar-right {
+        gap: 20px;
+    }
+
+    .navbar-button {
+        padding: 6px 18px;
+        font-size: 15px;
+    }
+
+    .navbar-user-name {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .logo {
+        width: 120px;
+    }
+
+    .navbar-menu {
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .navbar-right {
+        gap: 15px;
+    }
+
+    .navbar-button {
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+
+    .navbar-user-name {
+        max-width: 70px;
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 12px;
+    }
+
+    .navbar-button {
+        padding: 5px 12px;
+        font-size: 13px;
+    }
+
+    .navbar-user-name {
+        max-width: 60px;
+        font-size: 13px;
+    }
+}
