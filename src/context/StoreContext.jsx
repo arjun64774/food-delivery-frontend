@@ -123,6 +123,18 @@ const StoreContextProvider = (props) => {
     loadData();
   }, []);
 
+
+  // ✅ Function to refresh food list
+const refreshFoodList = async () => {
+  try {
+    const res = await axios.get(url + "/api/food/list");
+    if (res.data.success) {
+      setFoodList(res.data.data); // update food_list state
+    }
+  } catch (err) {
+    console.error("Error refreshing food list:", err);
+  }
+};
     
 
 
@@ -138,6 +150,7 @@ const StoreContextProvider = (props) => {
     login,
     logout,
     loading,
+    refreshFoodList
   };
 
   return (
